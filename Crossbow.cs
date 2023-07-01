@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class Crossbow : MonoBehaviour
 {
+    public GameObject prefabArrow;
+    public float shootInterval = 0.5f;
+    public float shootTimer = 0;
+
     void Update()
     {
+        shootTimer -= Time.deltaTime;
+        if (Input.GetMouseButton(0))
+        {
+            if (shootTimer <= 0)
+            {
+                Instantiate(prefabArrow, transform.position, transform.rotation);
+                shootTimer = shootInterval;
+            }
+        }
+
         Vector2 mouseScreenPos = Input.mousePosition;
         Vector2 mouseScenePos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
         Vector2 bowPos = transform.position;
