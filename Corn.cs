@@ -16,9 +16,5 @@ public class Corn : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp = hp - damage;
-        if (hp <= 0)
-        {
-            print("Dead corn");
-        }
     }
 }
