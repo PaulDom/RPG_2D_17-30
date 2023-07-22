@@ -9,6 +9,6 @@ public class HealthUI : MonoBehaviour
 
     private void Update()
     {
-        healthText.text = Corn.singleton.health.ToString();
+        healthText.text = Corn.singleton.hp.ToString();
     }
 }
