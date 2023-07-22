@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        spawnCounter += (spawnAddPerLevel - 1) * LevelController.level;
+        spawnCounter += spawnAddPerLevel * (LevelController.level - 1);
     }
 
     void Update()
