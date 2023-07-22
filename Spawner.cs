@@ -16,16 +16,19 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        spawnTimer = spawnTimer - Time.deltaTime;
-        if (spawnTimer <= 0)
+        if (LevelController.finished == false)
         {
-            if (spawnCounter > 0)
+            spawnTimer = spawnTimer - Time.deltaTime;
+            if (spawnTimer <= 0)
             {
-                Spawn();
-                spawnCounter = spawnCounter - 1;
-                spawnTimer = Random.Range(spawnIntervalMin, spawnIntervalMax);
-            }
-        } 
+                if (spawnCounter > 0)
+                {
+                    Spawn();
+                    spawnCounter = spawnCounter - 1;
+                    spawnTimer = Random.Range(spawnIntervalMin, spawnIntervalMax);
+                }
+            } 
+        }    
     }
 
     public void Spawn()
