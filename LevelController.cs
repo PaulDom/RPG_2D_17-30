@@ -6,6 +6,7 @@ public class LevelController : MonoBehaviour
 {
     public Spawner spawner_enemy;
     public static bool finished = false;
+    public static int level = 1;
 
     public void Start()
     {
@@ -40,10 +41,12 @@ public class LevelController : MonoBehaviour
     public void Victory()
     {
         finished = true;
+        level += 1;
     }
 
     public void Defeat()
     {
         finished = true;
+        level = 1;
     }
 }
