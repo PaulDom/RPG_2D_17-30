@@ -7,6 +7,11 @@ public class LevelController : MonoBehaviour
     public Spawner spawner_enemy;
     public static bool finished = false;
 
+    public void Start()
+    {
+        finished = false;
+    }
+    
     public void Update()
     {
         if (finished == false)
