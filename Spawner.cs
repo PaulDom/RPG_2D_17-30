@@ -13,6 +13,12 @@ public class Spawner : MonoBehaviour
     public float spawnTimer = 0f;
 
     public int spawnCounter = 3;
+    public int spawnAddPerLevel = 2;
+
+    private void Start()
+    {
+        spawnCounter += (spawnAddPerLevel - 1) * LevelController.level;
+    }
 
     void Update()
     {
