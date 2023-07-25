@@ -15,9 +15,9 @@ public class Spawner : MonoBehaviour
     public int spawnCounter = 3;
     public int spawnAddPerLevel = 2;
 
-    private void Start()
+    void Start()
     {
-        spawnCounter += spawnAddPerLevel * (LevelController.level - 1);
+        spawnCounter = spawnCounter + (LevelController.level - 1) * spawnAddPerLevel;
     }
 
     void Update()
@@ -33,8 +33,8 @@ public class Spawner : MonoBehaviour
                     spawnCounter = spawnCounter - 1;
                     spawnTimer = Random.Range(spawnIntervalMin, spawnIntervalMax);
                 }
-            } 
-        }    
+            }
+        }
     }
 
     public void Spawn()

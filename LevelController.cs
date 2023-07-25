@@ -8,17 +8,17 @@ public class LevelController : MonoBehaviour
     public static bool finished = false;
     public static int level = 1;
 
-    public void Start()
+    private void Start()
     {
         finished = false;
     }
-    
+
     public void Update()
     {
         if (finished == false)
         {
             Check();
-        }     
+        }
     }
 
     public void Check()
@@ -40,12 +40,14 @@ public class LevelController : MonoBehaviour
 
     public void Victory()
     {
+        print("Victory!");
         finished = true;
         level += 1;
     }
 
     public void Defeat()
     {
+        print("Defeat!");
         finished = true;
         level = 1;
     }
