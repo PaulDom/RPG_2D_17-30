@@ -8,6 +8,9 @@ public class LevelController : MonoBehaviour
     public static bool finished = false;
     public static int level = 1;
 
+    public GameObject PassedPanel;
+    public GameObject DefeatPanel;
+
     private void Start()
     {
         finished = false;
@@ -43,6 +46,7 @@ public class LevelController : MonoBehaviour
         print("Victory!");
         finished = true;
         level += 1;
+        PassedPanel.SetActive(true);
     }
 
     public void Defeat()
@@ -50,5 +54,6 @@ public class LevelController : MonoBehaviour
         print("Defeat!");
         finished = true;
         level = 1;
+        DefeatPanel.SetActive(true);
     }
 }
